@@ -1,12 +1,11 @@
 <div align="center">
+  <img src="docs/img/attesta-logo.png" alt="Attesta Logo" width="220"/>
 
 # Attesta
 
 **Decentralized Academic Certificate Management on Stellar (Soroban)**
 
-Issue, store, and verify academic credentials as on-chain records — inspired by CertifyChain, rebuilt for Stellar.
-
-> **Scaffold only:** this repository currently holds **documentation + empty app/contract templates**. Product code is implemented by the team.
+Issue, store, and verify academic credentials as on-chain records.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Network](https://img.shields.io/badge/network-Stellar%20Testnet-black.svg)](https://stellar.org)
@@ -38,8 +37,6 @@ Traditional academic certification systems face:
 | Role-based control | Admin, Director, Student |
 | Decentralized storage | IPFS via Pinata |
 | Type-safe stack | TypeScript (web + API) + Rust (contracts) |
-
-> Attesta is the Stellar evolution of the [CertifyChain](https://github.com/certify-CHAIN) concept (previously on Somnia / EVM). Same product intent; new chain and monorepo.
 
 ---
 
@@ -296,18 +293,12 @@ Contract IDs will be listed here after first testnet deploy.
 
 ## Roadmap (summary)
 
-1. **Scaffold** — monorepo, docs, empty templates ✅  
-2. **Product** — contracts + Freighter + role UIs + public verify (team)  
+1. **Foundation** — monorepo, docs, starter templates ✅  
+2. **Product** — contracts + Freighter + role UIs + public verify  
 3. **Storage** — Pinata upload end-to-end, QR verification links  
 4. **Ecosystem** — institution onboarding, batch mint, APIs for third parties  
 
 See [docs/ROADMAP.md](docs/ROADMAP.md).
-
----
-
-## Heritage
-
-Product concept adapted from **CertifyChain** ([github.com/certify-CHAIN](https://github.com/certify-CHAIN)) — academic NFT certificates on Somnia/EVM. Attesta ports that idea to **Stellar Soroban** in a single monorepo (Next + Node + Rust).
 
 ---
 
