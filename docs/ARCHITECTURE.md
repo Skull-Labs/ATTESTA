@@ -1,51 +1,46 @@
 # Architecture
 
-## Layers
+## Layers (planned)
 
 | Layer | Package | Responsibility |
 |-------|---------|----------------|
 | Presentation | `apps/web` | Landing, role dashboards, verify pages, wallet UX |
-| Application API | `apps/api` | Metadata validation, IPFS pin, helpers that should not run in the browser |
+| Application API | `apps/api` | Metadata validation, IPFS pin, server helpers |
 | Shared types | `packages/shared` | Cross-app TypeScript models |
 | Settlement | `contracts/` | Roles + certificate Soroban programs |
 
-## Trust boundaries
+> This repo is a **documentation + template scaffold**. Application and contract logic are owned by the team — crates and apps currently contain placeholders only.
+
+## Trust boundaries (target design)
 
 - **Browser** talks to Stellar RPC / wallets for signing; never holds issuer secrets for production minting beyond the user's own key.
 - **API** holds Pinata credentials and may later hold server-side indexing; it does not replace on-chain verification.
 - **Contracts** are source of truth for “was this certificate issued and who owns it?”
 
-## Contracts
+## Planned contracts
 
 ### `roles`
-
-- `initialize(admin)`
-- `grant_director` / `grant_student`
-- `is_director` / `is_student` / `get_admin`
+- Initialize admin
+- Grant / check Director and Student roles
 
 ### `certificate`
+- Mint certificate record with metadata URI
+- Query certificate + ownership
 
-- `initialize(admin)`
-- `mint(issuer, student, metadata_uri) -> id`
-- `get_certificate(id)`
-- `owns(student, id)`
-
-Cross-contract role checks (certificate calling roles) are intentionally deferred until deploy addresses are known; the scaffold keeps contracts independent for early testing.
-
-## Storage model
+## Storage model (target)
 
 1. Certificate image → IPFS CID  
-2. Metadata JSON (student, course, institution, `image` CID) → IPFS CID  
-3. `metadata_uri` (e.g. `ipfs://…`) stored in the certificate contract  
+2. Metadata JSON → IPFS CID  
+3. `metadata_uri` stored in the certificate contract  
 
 ## Mapping from CertifyChain (EVM)
 
 | CertifyChain | Attesta |
 |--------------|---------|
 | Solidity + Hardhat | Rust + Soroban |
-| ERC-721 | Soroban certificate records (NFT-like) |
+| ERC-721 | Soroban certificate records |
 | Roles.sol | `roles` contract |
-| Wagmi / MetaMask | Freighter / Stellar wallet kit (planned) |
+| Wagmi / MetaMask | Freighter / Stellar wallet kit |
 | Somnia Testnet | Stellar Testnet |
 | Vite React SPA | Next.js App Router |
 | Separate FE/BE repos | npm workspaces monorepo |

@@ -40,13 +40,13 @@ npm run contracts:build  # stellar contract build
 
 - Prefer editing an existing package over adding a new workspace.
 - Keep secrets in `.env` / `.env.local` — never commit them.
-- Contract public APIs get short docs only where neighbors already do.
+- Apps and contracts start as **templates** — replace placeholders with real logic.
 - Frontend wallet code belongs under `apps/web/src/lib` or `hooks`.
 - Pinata / IPFS server logic belongs under `apps/api/src/services`.
 
-## Suggested feature order
+## Suggested feature order (for the team)
 
-1. Deploy `roles` + `certificate` to Stellar Testnet; put IDs in env files.
+1. Replace `roles` / `certificate` hello templates with real Soroban logic; test + deploy to Testnet.
 2. Wire Freighter (or Stellar Wallets Kit) in `apps/web`.
 3. Implement Pinata upload in the API; call it from the director mint flow.
 4. Student dashboard + public `/verify/[id]` page.

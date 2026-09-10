@@ -1,34 +1,19 @@
 import "dotenv/config";
-import cors from "cors";
 import express from "express";
-import helmet from "helmet";
-import morgan from "morgan";
-import { env } from "./config/env";
-import { healthRouter } from "./routes/health";
-import { certificatesRouter } from "./routes/certificates";
 
+/**
+ * Attesta API template.
+ * Team: add routes, Pinata/IPFS, and Stellar helpers here.
+ */
 const app = express();
+const port = Number(process.env.PORT ?? 4000);
 
-app.use(helmet());
-app.use(
-  cors({
-    origin: env.CORS_ORIGIN,
-  }),
-);
-app.use(morgan("dev"));
-app.use(express.json({ limit: "2mb" }));
+app.use(express.json());
 
-app.use("/health", healthRouter);
-app.use("/api/certificates", certificatesRouter);
-
-app.get("/", (_req, res) => {
-  res.json({
-    name: "Attesta API",
-    version: "0.1.0",
-    network: env.STELLAR_NETWORK,
-  });
+app.get("/health", (_req, res) => {
+  res.json({ status: "ok" });
 });
 
-app.listen(env.PORT, () => {
-  console.log(`Attesta API listening on http://localhost:${env.PORT}`);
+app.listen(port, () => {
+  console.log(`Attesta API template on http://localhost:${port}`);
 });

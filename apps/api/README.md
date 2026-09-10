@@ -1,18 +1,8 @@
-# Attesta API
+# Attesta API (template)
 
-Node.js + TypeScript service for certificate metadata, IPFS pinning, and Stellar helpers.
-
-## Scripts
+Node.js + TypeScript Express scaffold. Implement certificate metadata,
+IPFS pinning, and Stellar helpers in `src/`.
 
 ```bash
 npm run dev --workspace=@attesta/api
-npm run build --workspace=@attesta/api
 ```
-
-## Endpoints (scaffold)
-
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/health` | Liveness |
-| POST | `/api/certificates/metadata` | Validate + (soon) pin metadata |
-| GET | `/api/certificates/verify/:id` | On-chain verify (planned) |

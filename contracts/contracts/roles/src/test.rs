@@ -1,35 +1,21 @@
 #![cfg(test)]
 
 use super::*;
-use soroban_sdk::{testutils::Address as _, Address, Env};
+use soroban_sdk::{vec, Env, String};
 
 #[test]
-fn initialize_sets_admin() {
+fn test_hello() {
     let env = Env::default();
-    env.mock_all_auths();
-    let contract_id = env.register(RolesContract, ());
-    let client = RolesContractClient::new(&env, &contract_id);
-    let admin = Address::generate(&env);
+    let contract_id = env.register(Contract, ());
+    let client = ContractClient::new(&env, &contract_id);
 
-    client.initialize(&admin);
-    assert_eq!(client.get_admin(), admin);
-}
-
-#[test]
-fn grant_director_and_student() {
-    let env = Env::default();
-    env.mock_all_auths();
-    let contract_id = env.register(RolesContract, ());
-    let client = RolesContractClient::new(&env, &contract_id);
-    let admin = Address::generate(&env);
-    let director = Address::generate(&env);
-    let student = Address::generate(&env);
-
-    client.initialize(&admin);
-    client.grant_director(&director);
-    client.grant_student(&student);
-
-    assert!(client.is_director(&director));
-    assert!(client.is_student(&student));
-    assert!(!client.is_director(&student));
+    let words = client.hello(&String::from_str(&env, "roles"));
+    assert_eq!(
+        words,
+        vec![
+            &env,
+            String::from_str(&env, "Hello"),
+            String::from_str(&env, "roles"),
+        ]
+    );
 }

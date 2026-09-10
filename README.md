@@ -6,6 +6,8 @@
 
 Issue, store, and verify academic credentials as on-chain records — inspired by CertifyChain, rebuilt for Stellar.
 
+> **Scaffold only:** this repository currently holds **documentation + empty app/contract templates**. Product code is implemented by the team.
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Network](https://img.shields.io/badge/network-Stellar%20Testnet-black.svg)](https://stellar.org)
 [![Stack](https://img.shields.io/badge/monorepo-Next.js%20%7C%20Node%20%7C%20Soroban-informational.svg)](#-repository-structure)
@@ -117,12 +119,11 @@ sequenceDiagram
 
 ### Contracts (`contracts/`)
 - **Rust** + **Soroban SDK**
-- `roles` — Admin / Director / Student access control
-- `certificate` — mint + query certificate records
+- `roles` / `certificate` crates (hello templates — team implements logic)
 - **Stellar CLI** for build, test, deploy
 
 ### Shared (`packages/shared`)
-- Shared TypeScript types and network constants
+- Shared TypeScript types stub (team fills in)
 
 ---
 
@@ -295,8 +296,8 @@ Contract IDs will be listed here after first testnet deploy.
 
 ## Roadmap (summary)
 
-1. **Core** — roles + certificate contracts, API metadata scaffold, landing UI ✅ scaffold  
-2. **Product** — Freighter connect, director mint UI, student dashboard, public verify  
+1. **Scaffold** — monorepo, docs, empty templates ✅  
+2. **Product** — contracts + Freighter + role UIs + public verify (team)  
 3. **Storage** — Pinata upload end-to-end, QR verification links  
 4. **Ecosystem** — institution onboarding, batch mint, APIs for third parties  
 
