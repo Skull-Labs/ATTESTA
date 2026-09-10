@@ -6,8 +6,8 @@ use soroban_sdk::{vec, Env, String};
 #[test]
 fn test_hello() {
     let env = Env::default();
-    let contract_id = env.register(Contract, ());
-    let client = ContractClient::new(&env, &contract_id);
+    let contract_id = env.register(RolesContract, ());
+    let client = RolesContractClient::new(&env, &contract_id);
 
     let words = client.hello(&String::from_str(&env, "roles"));
     assert_eq!(
@@ -19,3 +19,13 @@ fn test_hello() {
         ]
     );
 }
+
+// --- Team checklist (uncomment / implement after filling lib.rs) ---
+// #[test]
+// fn todo_initialize_sets_admin() { ... }
+// #[test]
+// fn todo_grant_and_check_director() { ... }
+// #[test]
+// fn todo_grant_and_check_student() { ... }
+// #[test]
+// fn todo_non_admin_cannot_grant() { ... }
