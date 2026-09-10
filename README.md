@@ -1,13 +1,5 @@
 <div align="center">
-
-```text
- █████╗ ████████╗████████╗███████╗███████╗████████╗ █████╗ 
-██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝██╔══██╗
-███████║   ██║      ██║   █████╗  ███████╗   ██║   ███████║
-██╔══██║   ██║      ██║   ██╔══╝  ╚════██║   ██║   ██╔══██║
-██║  ██║   ██║      ██║   ███████╗███████║   ██║   ██║  ██║
-╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
-```
+  <img src="docs/logo/attesta-readme-banner.png" alt="Attesta — sailing ship banner" width="100%"/>
 
 **Decentralized Academic Certificate Management on Stellar (Soroban)**
 
