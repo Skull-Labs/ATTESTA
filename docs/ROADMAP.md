@@ -1,6 +1,6 @@
 # Roadmap
 
-## Phase 1 — Scaffold ✅
+## Phase 1 — Foundation ✅
 
 - [x] npm workspaces monorepo layout
 - [x] Next.js app template (`apps/web`)
@@ -9,7 +9,7 @@
 - [x] Soroban contract crates (`roles`, `certificate`) as hello templates
 - [x] Project documentation
 
-## Phase 2 — Product (team) 🚧
+## Phase 2 — Product 🚧
 
 - [ ] Implement `roles` + `certificate` contracts
 - [ ] Freighter / Stellar wallet connect
