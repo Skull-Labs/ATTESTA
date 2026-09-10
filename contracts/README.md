@@ -1,13 +1,14 @@
-# Attesta contracts (Soroban templates)
+# Attesta contracts (Soroban)
 
-Rust workspace with empty contract crates for the team to implement:
-
-| Crate | Planned purpose |
-|-------|-----------------|
+| Crate | Purpose |
+|-------|---------|
 | `roles` | Admin / Director / Student access control |
 | `certificate` | Certificate mint + verify records |
 
-Each crate currently ships the default Soroban `hello` template only.
+Function stubs with `TODO(team)` markers are in each `src/lib.rs`.
+See **[TODOS.md](./TODOS.md)** for the full checklist.
+
+`hello` remains as a smoke test until real logic replaces it.
 
 ## Commands
 
