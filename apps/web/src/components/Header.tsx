@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /**
  * components/Header.tsx — sample layout component.
  * Team: replace with real nav + wallet connect button.
@@ -15,8 +17,8 @@ export function Header() {
     >
       <strong>Attesta</strong>
       <nav style={{ display: "flex", gap: "1rem", fontSize: "0.9rem" }}>
-        <a href="/">Home</a>
-        <a href="/verify">Verify</a>
+        <Link href="/">Home</Link>
+        <Link href="/verify">Verify</Link>
         {/* TODO(team): Admin / Director / Student dashboards */}
       </nav>
     </header>
