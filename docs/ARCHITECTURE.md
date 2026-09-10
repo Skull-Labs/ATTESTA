@@ -1,6 +1,6 @@
 # Architecture
 
-## Layers (planned)
+## Layers
 
 | Layer | Package | Responsibility |
 |-------|---------|----------------|
@@ -9,9 +9,7 @@
 | Shared types | `packages/shared` | Cross-app TypeScript models |
 | Settlement | `contracts/` | Roles + certificate Soroban programs |
 
-> This repo is a **documentation + template scaffold**. Application and contract logic are owned by the team — crates and apps currently contain placeholders only.
-
-## Trust boundaries (target design)
+## Trust boundaries
 
 - **Browser** talks to Stellar RPC / wallets for signing; never holds issuer secrets for production minting beyond the user's own key.
 - **API** holds Pinata credentials and may later hold server-side indexing; it does not replace on-chain verification.
@@ -27,20 +25,20 @@
 - Mint certificate record with metadata URI
 - Query certificate + ownership
 
-## Storage model (target)
+## Storage model
 
 1. Certificate image → IPFS CID  
 2. Metadata JSON → IPFS CID  
 3. `metadata_uri` stored in the certificate contract  
 
-## Mapping from CertifyChain (EVM)
+## Stack choices
 
-| CertifyChain | Attesta |
-|--------------|---------|
-| Solidity + Hardhat | Rust + Soroban |
-| ERC-721 | Soroban certificate records |
-| Roles.sol | `roles` contract |
-| Wagmi / MetaMask | Freighter / Stellar wallet kit |
-| Somnia Testnet | Stellar Testnet |
-| Vite React SPA | Next.js App Router |
-| Separate FE/BE repos | npm workspaces monorepo |
+| Concern | Choice |
+|---------|--------|
+| Smart contracts | Rust + Soroban |
+| Certificate records | Soroban on-chain data |
+| Access control | `roles` contract |
+| Wallet | Freighter / Stellar wallet kit |
+| Network | Stellar Testnet |
+| Frontend | Next.js App Router |
+| Repo layout | npm workspaces monorepo |
