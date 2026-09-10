@@ -277,6 +277,14 @@ Contract IDs will be listed here after first testnet deploy.
 | [Development](docs/DEVELOPMENT.md) | Local setup, scripts, conventions |
 | [Roadmap](docs/ROADMAP.md) | Phased delivery plan |
 | [Contributing](CONTRIBUTING.md) | How to contribute |
+| [Contract TODOs](contracts/TODOS.md) | Soroban function checklist |
+
+## CI
+
+GitHub Actions (`.github/workflows/ci.yml`) runs on every push and pull request:
+
+- **Node** — `npm ci`, workspace lint/typecheck, workspace build
+- **Contracts** — `cargo test` + WASM builds for `roles` and `certificate`
 
 ---
 
