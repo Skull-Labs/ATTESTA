@@ -157,7 +157,7 @@ ATTESTA/
 
 ### Prerequisites
 
-- **Node.js** 18+ and npm
+- **Node.js**  18+ and npm 
 - **Rust** toolchain (for Soroban)
 - [Stellar CLI](https://developers.stellar.org/docs/tools/cli) (`stellar`)
 - Optional: Freighter wallet, Pinata account
